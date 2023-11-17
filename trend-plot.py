@@ -2,15 +2,18 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 df = pd.read_csv("csv_files/stocks.csv")
-print(df)
 
 aapl = df[df["symbol"] == "AAPL"]
-print(aapl)
 x = aapl["date"]
 y = aapl["price"]
 
+msft = df[df["symbol"] == "MSFT"]
+x2 = msft["date"]
+y2 = msft["price"]
+
 plt.plot(x, y)
-plt.xticks(x[::6],  rotation='vertical')
+plt.plot(x2, y2)
+plt.xticks(x[::6], rotation=45)
+plt.tight_layout()
+
 plt.show()
-
-
