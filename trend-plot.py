@@ -8,12 +8,12 @@ x = aapl["date"]
 y = aapl["price"]
 
 msft = df[df["symbol"] == "MSFT"]
-x2 = msft["date"]
 y2 = msft["price"]
 
-plt.plot(x, y)
-plt.plot(x2, y2)
+plt.plot(x, y, label="Apple")
+plt.plot(x, y2, label="Microsoft")
 plt.xticks(x[::6], rotation=45)
 plt.tight_layout()
+plt.legend()
 
 plt.show()
